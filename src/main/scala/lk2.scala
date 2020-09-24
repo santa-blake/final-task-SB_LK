@@ -30,5 +30,6 @@ object final_work_11 extends App {
   longestWord.foreach(println)
   println(longestWord.max, longestWord.min) //īsti nav pareizs!!!
 
-  // Santas push/pull test change//
+  // ....
+  //Santas change 2
 }
