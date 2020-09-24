@@ -29,5 +29,6 @@ object final_work_11 extends App {
   val longestWord = splitLine.map(word => word ->  word.length)
   longestWord.foreach(println)
   println(longestWord.max, longestWord.min) //īsti nav pareizs!!!
-// Santas push/pull test change//
+
+  // Santas push/pull test change//
 }
