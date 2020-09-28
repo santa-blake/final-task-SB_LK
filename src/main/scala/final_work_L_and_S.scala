@@ -67,7 +67,6 @@ object final_work_L_and_S extends App {
   //val yearManufacture = wordManufacturer.toString TODO?
 
 
-
   //Santas search 28.09.2020./
   val wordsplit = myText.flatMap(rec => rec.split(" "))
   val recipe: Seq[String] = wordsplit.filter(n => n == n.toUpperCase)
