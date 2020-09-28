@@ -76,7 +76,7 @@ object final_work_L_and_S extends App {
   //val noEmptyrows = myText.filter(row => row != null && row.length > 0)
 
   //Šeit velējos dabūt ārā rindas ar skaitļiem, lai pēc tam tās noņemtu no Upper rindām
-  //val lineswithNumbers = myText.filter(_.contains(...).sortBy(_.length).reverse.foreach(println)
+  //val lineswithNumbers = myText.filter(_.contains(...).foreach(println)
 
   println(s" List of UpperWords: $recipe")
   println(s" And here are my $linesWithUpperWords") // Printējas kā List (), bez uzskaitījuma - varbūt zini, kā dabūt atsevišķas rindas, foreach man nedarbojās :( ?
