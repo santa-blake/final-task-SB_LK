@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException
 
+import scala.collection.immutable.ListMap
+
 object final_work_L_and_S extends App {
 
   val srcName = "c:/poem/final.work.txt"
@@ -34,10 +36,36 @@ object final_work_L_and_S extends App {
   val oneLiner = longestWord.groupBy(_.toString().length).mapValues(_.toSet).maxBy(_._1)
   println(s"The longest words from longest line are $oneLiner") //the longest words
 
+  val shortestLine = myText.filter(_.size > 0).sortBy(_.size).reverse.reverse(0) //vismaza līnija, ir tukša linija (emty line)
+  println(s"The shortest line in the text is $shortestLine") //the shortest line in the text
 
-  // Sis bus beigas
-  //  val mySeq = openSource(srcName)
-  //  val filteredSeq = processSeq(mySeq)
-  //  saveSeq(destName,filteredSeq)
+  def countedWords: Unit = {
+    val counter = scala.io.Source.fromFile(srcName)
+      .getLines
+      .flatMap(_.split("\\W+"))
+      .foldLeft(Map.empty[String, Int]) {
+        (count, word) => count + (word -> (count.getOrElse(word, 0) + 1))
+      }
+    println(ListMap(counter.toSeq.sortWith(_._2 > _._2): _*).take(10))
+  }
+
+  val countedWordsMost = countedWords
+  //  1) the source
+  //  2) get the lines
+  //  3) using the split function get all words in put them in to a flatMap
+  //  4) foldLeft : starting from the left (starting point) and go to end, and
+  //     counted each word how many times it appears in this text file
+  //  5) to sorted Map by value from high to low and return first 10 value
+
+  println(s"The most used words in the text with these total amount are $countedWordsMost.")
+
+  //TODO countedWords lai vai pielikt txt $
+  //
+
+  val wordManufacturer = myText.filter(_.contains("Manufacturer")).sortBy(_.length).reverse.foreach(println)
+  //
+
+  val yearManufacture = wordManufacturer.toString
+
 
 }
