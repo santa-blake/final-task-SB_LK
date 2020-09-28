@@ -64,8 +64,23 @@ object final_work_L_and_S extends App {
 
   val wordManufacturer = myText.filter(_.contains("Manufacturer")).sortBy(_.length).reverse.foreach(println)
   //
+  //val yearManufacture = wordManufacturer.toString TODO?
 
-  val yearManufacture = wordManufacturer.toString
 
+
+  //Santas search 28.09.2020./
+  val wordsplit = myText.flatMap(rec => rec.split(" "))
+  val recipe: Seq[String] = wordsplit.filter(n => n == n.toUpperCase)
+
+  val linesWithUpperWords: Seq[String] = myText.filter(_.contains(recipe))
+  //val noEmptyrows = myText.filter(row => row != null && row.length > 0)
+
+  //Šeit velējos dabūt ārā rindas ar skaitļiem, lai pēc tam tās noņemtu no Upper rindām
+  //val lineswithNumbers = myText.filter(_.contains(...).sortBy(_.length).reverse.foreach(println)
+
+  println(s" List of UpperWords: $recipe")
+  println(s" And here are my $linesWithUpperWords") // Printējas kā List (), bez uzskaitījuma - varbūt zini, kā dabūt atsevišķas rindas, foreach man nedarbojās :( ?
+  //linesWithUpperWords.toString // ?
+  //println(linesWithUpperWords) // ?
 
 }
