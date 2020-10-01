@@ -150,6 +150,7 @@ object final_work_L_and_S extends App {
    val splitForCase = noStrength.split("\\s").toList
   println(noStrength)
   // 1) split words from noStrength
+  //
 
 
 
