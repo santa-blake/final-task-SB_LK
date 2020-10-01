@@ -64,24 +64,18 @@ object final_work_L_and_S extends App {
   //the longest line in text
 
   val longestLineLength = longestLine.length
-  println(s"In the text the longest line amount = $longestLineLength")
-  //the longest line amount of symbol
+  println(s"In the text the longest line amount is $longestLineLength") //the longest line amount of symbol
 
   val splitLine = longestLine.split(" ") //to split the words(symbols as well) length
-  val longestWord = splitLine.map(word => word -> word.length)
-  //word length with amount
+  val longestWord = splitLine.map(word => word ->  word.length)
 
   println(longestWord.take(4: Int).mkString
-  ("The first 4 words with amount of length  from longest line in the text = " + "(", ", ", ")"))
-  //is returned only the first four words from longest line in the text
-
+  ("The first words with amount of length  from longest line in the text are " + "(", ", ", ")")) //is returned only the first four words from longest line in the text
 
   val oneLiner = longestWord.groupBy(_.toString().length).mapValues(_.toSet).maxBy(_._1)
-  println(s"The longest words from longest line = $oneLiner") //the longest words
+  println(s"The longest words from longest line are $oneLiner") //the longest words
 
-  //26/09
-  val shortestLine = myText.filter(_.size > 0).sortBy(_.size).reverse.reverse(0)
-  //the shortest line with empty line
+  val shortestLine = myText.filter(_.size > 0).sortBy(_.size).reverse.reverse(0) //vismaza līnija, ir tukša linija (emty line)
   println(s"The shortest line in the text is $shortestLine") //the shortest line in the text
 
   def countedWords: Unit = {
